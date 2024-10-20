@@ -148,11 +148,11 @@ const slides = [
     content: `
         <h2>Backward Differences</h2>
         <p>Backward differences are another method for approximating the derivative of a function, focusing on the difference between the current function value and the previous one. The backward difference is defined as:</p>
-        <p class="math">∇f(x₀) = f(x₀) - f(x_{-1})</p>
+        <p class="math">∇f(x₀) = f(x₀) - f(x<sub>-1</sub>)</p>
         <p>Where:
         <ul>
             <li><strong>x₀, x_{-1}:</strong> Consecutive points where the function is evaluated, with x₀ being the current point.</li>
-            <li><strong>f(x₀), f(x_{-1}):</strong> Values of the function at those points.</li>
+            <li><strong>f(x₀), f(x<sub>-1</sub>):</strong> Values of the function at those points.</li>
         </ul>
         </p>
         <p>Backward differences are particularly useful when data points are equally spaced and are often employed in constructing difference tables for backward interpolation methods.</p>
@@ -161,15 +161,15 @@ const slides = [
 },
 
 {
-    title: "2.4. Central Differences",
-    content: `
+    "title": "2.4. Central Differences",
+    "content": `
         <h2>Central Differences</h2>
         <p>Central differences are used to approximate the derivative of a function by considering the average of the forward and backward differences at a point. The central difference is defined as:</p>
-        <p class="math">Δf(x₀) = \frac{f(x₁) - f(x_{-1})}{2h}</p>
+        <p class="math">Δf(x₀) = (f(x₁) - f(x<sub>-1</sub>)) / (2h)</p>
         <p>Where:
         <ul>
             <li><strong>x₀:</strong> The point at which the derivative is being approximated.</li>
-            <li><strong>x₁, x_{-1}:</strong> The points immediately before and after x₀, respectively.</li>
+            <li><strong>x₁, x<sub>-1</sub>:</strong> The points immediately before and after x₀, respectively.</li>
             <li><strong>h:</strong> The spacing between the points (h = x₁ - x₀).</li>
         </ul>
         </p>
@@ -199,15 +199,15 @@ const slides = [
 },
 
 {
-    title: "2.5.1. First-Order Differences",
-    content: `
+    "title": "2.5.1. First-Order Differences",
+    "content": `
         <h2>First-Order Differences</h2>
         <p>First-order differences are the simplest form of finite differences, representing the change in function values between consecutive data points. They are calculated using:</p>
-        <p class="math">Δf(x_i) = f(x_{i+1}) - f(x_i)</p>
+        <p class="math">Δf(x<sub>i</sub>) = f(x<sub>i+1</sub>) - f(x<sub>i</sub>)</p>
         <p>Where:
         <ul>
-            <li><strong>x_i:</strong> The current data point.</li>
-            <li><strong>x_{i+1}:</strong> The next data point.</li>
+            <li><strong>x<sub>i</sub>:</strong> The current data point.</li>
+            <li><strong>x<sub>i+1</sub>:</strong> The next data point.</li>
         </ul>
         </p>
         <p>First-order differences are essential for constructing finite difference tables and play a crucial role in interpolation methods, allowing for the estimation of values between known data points.</p>
@@ -218,18 +218,17 @@ const slides = [
         </ul>
     `
 },
-
 {
-    title: "2.5.2. Higher-Order Differences",
-    content: `
+    "title": "2.5.2. Higher-Order Differences",
+    "content": `
         <h2>Higher-Order Differences</h2>
         <p>Higher-order differences are obtained by calculating the differences of the first-order differences. They provide a way to analyze the behavior of the function more closely and are useful in constructing interpolation formulas.</p>
         <p>The n-th order difference is defined as:</p>
-        <p class="math">Δ^n f(x_i) = Δ(Δ^{n-1} f(x_i))</p>
+        <p class="math">Δ<sup>n</sup> f(x<sub>i</sub>) = Δ(Δ<sup>n-1</sup> f(x<sub>i</sub>))</p>
         <p>Where:
         <ul>
-            <li><strong>Δ^n f(x_i):</strong> The n-th order difference.</li>
-            <li><strong>Δ^{n-1} f(x_i):</strong> The (n-1)-th order difference.</li>
+            <li><strong>Δ<sup>n</sup> f(x<sub>i</sub>):</strong> The n-th order difference.</li>
+            <li><strong>Δ<sup>n-1</sup> f(x<sub>i</sub>):</strong> The (n-1)-th order difference.</li>
         </ul>
         </p>
         <p>Higher-order differences allow for better approximations in interpolation, especially when dealing with polynomial fitting.</p>
@@ -242,8 +241,8 @@ const slides = [
 },
 
 {
-    title: "3. The Forward Difference Operator (E)",
-    content: `
+    "title": "3. The Forward Difference Operator (E)",
+    "content": `
         <h2>3.1. Definition and Significance</h2>
         <p>The forward difference operator, denoted as <strong>E</strong>, is a key concept in numerical analysis that simplifies the notation for calculating forward differences. It is defined as:</p>
         <p class="math">E[f(x)] = f(x + h) - f(x)</p>
@@ -261,14 +260,13 @@ const slides = [
         <p>This notation highlights the role of the operator in calculating differences and allows for a more systematic approach to constructing difference tables and interpolation formulas.</p>
     `
 },
-
 {
-    title: "3.3. Usage of E-Operator in Interpolation Formulas",
-    content: `
+    "title": "3.3. Usage of E-Operator in Interpolation Formulas",
+    "content": `
         <h2>Usage of E-Operator in Interpolation Formulas</h2>
         <p>The forward difference operator <strong>E</strong> is integral in simplifying interpolation formulas, especially in methods like Newton's forward interpolation. The operator allows us to express interpolation in a concise manner:</p>
         <p>The Newton's forward interpolation formula can be represented as:</p>
-        <p class="math">P(x) = f(x_0) + \frac{E[f(x_0)]}{1!} \cdot (x - x_0) + \frac{E^2[f(x_0)]}{2!} \cdot (x - x_0)(x - x_1) + ...</p>
+        <p class="math">P(x) = f(x_0) + \\frac{E[f(x_0)]}{1!} \\cdot (x - x_0) + \\frac{E^2[f(x_0)]}{2!} \\cdot (x - x_0)(x - x_1) + ...</p>
         <p>Where:
         <ul>
             <li><strong>P(x):</strong> The interpolated value at x.</li>
@@ -278,16 +276,15 @@ const slides = [
         <p>This representation allows for efficient calculation of interpolated values and is especially useful when working with large datasets or when constructing difference tables.</p>
     `
 },
-
 {
-    title: "4. Newton-Gregory Forward Difference Formula",
-    content: `
+    "title": "4. Newton-Gregory Forward Difference Formula",
+    "content": `
         <h2>4.1. Introduction to Forward Difference Interpolation</h2>
         <p>The Newton-Gregory forward difference formula is a method of interpolation that uses forward differences to estimate unknown values based on known data points. This method is particularly effective for datasets with equally spaced intervals.</p>
 
         <h2>4.2. Formula for Forward Difference Interpolation</h2>
         <p>The formula is expressed as:</p>
-        <p class="math">P(x) = f(x_0) + \frac{E[f(x_0)]}{1!} \cdot (x - x_0) + \frac{E^2[f(x_0)]}{2!} \cdot (x - x_0)(x - x_1) + ... + \frac{E^n[f(x_0)]}{n!} \cdot (x - x_0)(x - x_1)...(x - x_{n-1})</p>
+        <p class="math">P(x) = f(x_0) + \\frac{E[f(x_0)]}{1!} \\cdot (x - x_0) + \\frac{E^2[f(x_0)]}{2!} \\cdot (x - x_0)(x - x_1) + ... + \\frac{E^n[f(x_0)]}{n!} \\cdot (x - x_0)(x - x_1)...(x - x_{n-1})</p>
         <p>Where:
         <ul>
             <li><strong>P(x):</strong> The interpolated value at x.</li>
@@ -301,42 +298,40 @@ const slides = [
         <p>Through the derivation, the formula is shown to accurately approximate the value of the function at x by utilizing known values and their differences.</p>
     `
 },
-
 {
-    title: "4.3. Step-by-Step Proof of Newton-Gregory Forward Difference Formula",
-    content: `
+    "title": "4.3. Step-by-Step Proof of Newton-Gregory Forward Difference Formula",
+    "content": `
         <h2>Step-by-Step Proof of Newton-Gregory Forward Difference Formula</h2>
         <p>The proof is based on Taylor's series expansion and the properties of forward differences. Here are the steps:</p>
 
         <h3>Step 1: Taylor's Series Expansion</h3>
         <p>Consider the Taylor series expansion of a function f(x) around a point x₀:</p>
-        <p class="math">f(x) = f(x₀) + f'(x₀)(x - x₀) + \frac{f''(x₀)}{2!}(x - x₀)^2 + ... + \frac{f^{(n)}(x₀)}{n!}(x - x₀)^n + R_n</p>
+        <p class="math">f(x) = f(x₀) + f'(x₀)(x - x₀) + \\frac{f''(x₀)}{2!}(x - x₀)^2 + ... + \\frac{f^{(n)}(x₀)}{n!}(x - x₀)^n + R_n</p>
         <p>Where R_n is the remainder term.</p>
 
         <h3>Step 2: Relating Derivatives to Forward Differences</h3>
         <p>We can express the derivatives in terms of forward differences:</p>
         <ul>
             <li><strong>First derivative:</strong> <br>f'(x₀) ≈ Δf(x₀)</li>
-            <li><strong>Second derivative:</strong> <br>f''(x₀) ≈ Δ^2f(x₀)</li>
+            <li><strong>Second derivative:</strong> <br>f''(x₀) ≈ Δ²f(x₀)</li>
             <li><strong>n-th derivative:</strong> <br>f^{(n)}(x₀) ≈ E^n[f(x₀)]</li>
         </ul>
 
         <h3>Step 3: Substituting Back into the Taylor Series</h3>
         <p>Substituting these expressions into the Taylor series gives:</p>
-        <p class="math">f(x) = f(x₀) + \frac{E[f(x₀)]}{1!}(x - x₀) + \frac{E^2[f(x₀)]}{2!}(x - x₀)(x - x_1) + ... + \frac{E^n[f(x₀)]}{n!}(x - x₀)(x - x_1)...(x - x_{n-1})</p>
+        <p class="math">f(x) = f(x₀) + \\frac{E[f(x₀)]}{1!}(x - x₀) + \\frac{E^2[f(x₀)]}{2!}(x - x₀)(x - x_1) + ... + \\frac{E^n[f(x₀)]}{n!}(x - x₀)(x - x_1)...(x - x_{n-1})</p>
 
         <h3>Step 4: Ignoring the Remainder Term</h3>
         <p>For the purpose of interpolation, we ignore the remainder term, assuming it is negligible for small h:</p>
-        <p class="math">P(x) = f(x₀) + \frac{E[f(x₀)]}{1!} \cdot (x - x₀) + ... + \frac{E^n[f(x₀)]}{n!} \cdot (x - x₀)(x - x_1)...(x - x_{n-1})</p>
+        <p class="math">P(x) = f(x₀) + \\frac{E[f(x₀)]}{1!} \\cdot (x - x₀) + ... + \\frac{E^n[f(x₀)]}{n!} \\cdot (x - x₀)(x - x_1)...(x - x_{n-1})</p>
 
         <h3>Conclusion</h3>
         <p>This results in the Newton-Gregory forward difference formula for interpolating the value of f at any point x based on known function values and their differences.</p>
     `
 },
-
 {
-    title: "4.4. Worked Example for Forward Difference Interpolation",
-    content: `
+    "title": "4.4. Worked Example for Forward Difference Interpolation",
+    "content": `
         <h2>Worked Example for Forward Difference Interpolation</h2>
         <p>Let's consider a dataset with equally spaced intervals:</p>
         <table>
@@ -394,17 +389,16 @@ const slides = [
 
         <h3>Step 2: Construct the Interpolation Polynomial</h3>
         <p>Using the Newton-Gregory forward difference formula, we want to estimate f(2.5):</p>
-        <p class="math">P(2.5) = f(2) + \frac{Δf(2)}{1!} \cdot (2.5 - 2) + \frac{Δ²f(2)}{2!} \cdot (2.5 - 2)(2.5 - 3)</p>
+        <p class="math">P(2.5) = f(2) + \\frac{Δf(2)}{1!} \\cdot (2.5 - 2) + \\frac{Δ²f(2)}{2!} \\cdot (2.5 - 2)(2.5 - 3)</p>
         <p>Substituting the values:</p>
-        <p class="math">P(2.5) = 3 + \frac{2}{1!} \cdot 0.5 + \frac{1}{2!} \cdot (0.5)(-0.5)</p>
+        <p class="math">P(2.5) = 3 + \\frac{2}{1!} \\cdot 0.5 + \\frac{1}{2!} \\cdot (0.5)(-0.5)</p>
         <p>Calculating gives:</p>
-        <p class="math">P(2.5) = 3 + 1 + \frac{1}{4} = 4.25</p>
+        <p class="math">P(2.5) = 3 + 1 + \\frac{1}{4} = 4.25</p>
 
         <h3>Conclusion</h3>
         <p>The estimated value of f(2.5) using forward difference interpolation is approximately 4.25.</p>
-    `
+        `
 },
-
 {
     title: "4.5. Applications and Advantages of Forward Interpolation",
     content: `
@@ -430,16 +424,15 @@ const slides = [
         <p>Overall, forward interpolation is a valuable technique in numerical analysis, offering both practical applications and advantages for data estimation.</p>
     `
 },
-
 {
-    title: "5. Newton-Gregory Backward Difference Formula",
-    content: `
+    "title": "5. Newton-Gregory Backward Difference Formula",
+    "content": `
         <h2>5.1. Introduction to Backward Difference Interpolation</h2>
         <p>The Newton-Gregory backward difference formula is a method of interpolation that uses backward differences to estimate unknown values based on known data points. This approach is particularly effective when data points are available at the end of the interval and we want to estimate values at earlier points.</p>
 
         <h2>5.2. Formula for Backward Difference Interpolation</h2>
         <p>The formula is expressed as:</p>
-        <p class="math">P(x) = f(x_n) + \frac{E[f(x_n)]}{1!} \cdot (x - x_n) + \frac{E^2[f(x_n)]}{2!} \cdot (x - x_n)(x - x_{n-1}) + ... + \frac{E^n[f(x_n)]}{n!} \cdot (x - x_n)(x - x_{n-1})...(x - x_{n-n})</p>
+        <p class="math">P(x) = f(x_n) + \frac{E[f(x_n)]}{1!} \cdot (x - x_n) + \frac{E^2[f(x_n)]}{2!} \cdot (x - x_n)(x - x_{n-1}) + \ldots + \frac{E^n[f(x_n)]}{n!} \cdot (x - x_n)(x - x_{n-1}) \ldots (x - x_{n-n})</p>
         <p>Where:
         <ul>
             <li><strong>P(x):</strong> The interpolated value at x.</li>
@@ -454,31 +447,31 @@ const slides = [
 },
 
 {
-    title: "5.3. Step-by-Step Proof of Newton-Gregory Backward Difference Formula",
-    content: `
+    "title": "5.3. Step-by-Step Proof of Newton-Gregory Backward Difference Formula",
+    "content": `
         <h2>Step-by-Step Proof of Newton-Gregory Backward Difference Formula</h2>
         <p>The proof is based on Taylor's series expansion and the properties of backward differences. Here are the steps:</p>
 
         <h3>Step 1: Taylor's Series Expansion</h3>
         <p>Consider the Taylor series expansion of a function f(x) around the last point xₙ:</p>
-        <p class="math">f(x) = f(x_n) + f'(x_n)(x - x_n) + \frac{f''(x_n)}{2!}(x - x_n)^2 + ... + \frac{f^{(n)}(x_n)}{n!}(x - x_n)^n + R_n</p>
+        <p class="math">f(x) = f(x_n) + f'(x_n)(x - x_n) + \frac{f''(x_n)}{2!}(x - x_n)^2 + \ldots + \frac{f^{(n)}(x_n)}{n!}(x - x_n)^n + R_n</p>
         <p>Where R_n is the remainder term.</p>
 
         <h3>Step 2: Relating Derivatives to Backward Differences</h3>
         <p>We can express the derivatives in terms of backward differences:</p>
         <ul>
-            <li><strong>First derivative:</strong> <br>f'(x_n) ≈ -Δf(x_n)</li>
-            <li><strong>Second derivative:</strong> <br>f''(x_n) ≈ -Δ²f(x_n)</li>
-            <li><strong>n-th derivative:</strong> <br>f^{(n)}(x_n) ≈ -E^n[f(x_n)]</li>
+            <li><strong>First derivative:</strong> <br>f'(x_n) \approx -\Delta f(x_n)</li>
+            <li><strong>Second derivative:</strong> <br>f''(x_n) \approx -\Delta^2 f(x_n)</li>
+            <li><strong>n-th derivative:</strong> <br>f^{(n)}(x_n) \approx -E^n[f(x_n)]</li>
         </ul>
 
         <h3>Step 3: Substituting Back into the Taylor Series</h3>
         <p>Substituting these expressions into the Taylor series gives:</p>
-        <p class="math">f(x) = f(x_n) - \frac{E[f(x_n)]}{1!}(x_n - x) - \frac{E^2[f(x_n)]}{2!}(x_n - x)(x_n - x_{n-1}) - ... - \frac{E^n[f(x_n)]}{n!}(x_n - x)(x_n - x_{n-1})...(x_n - x_{n-n})</p>
+        <p class="math">f(x) = f(x_n) - \frac{E[f(x_n)]}{1!}(x_n - x) - \frac{E^2[f(x_n)]}{2!}(x_n - x)(x_n - x_{n-1}) - \ldots - \frac{E^n[f(x_n)]}{n!}(x_n - x)(x_n - x_{n-1}) \ldots (x_n - x_{n-n})</p>
 
         <h3>Step 4: Ignoring the Remainder Term</h3>
         <p>For the purpose of interpolation, we ignore the remainder term, assuming it is negligible for small (x_n - x):</p>
-        <p class="math">P(x) = f(x_n) - \frac{E[f(x_n)]}{1!}(x_n - x) - ... - \frac{E^n[f(x_n)]}{n!}(x_n - x)(x_n - x_{n-1})...(x_n - x_{n-n})</p>
+        <p class="math">P(x) = f(x_n) - \frac{E[f(x_n)]}{1!}(x_n - x) - \ldots - \frac{E^n[f(x_n)]}{n!}(x_n - x)(x_n - x_{n-1}) \ldots (x_n - x_{n-n})</p>
 
         <h3>Conclusion</h3>
         <p>This results in the Newton-Gregory backward difference formula for interpolating the value of f at any point x based on known function values and their backward differences.</p>
@@ -486,8 +479,8 @@ const slides = [
 },
 
 {
-    title: "5.4. Worked Example for Backward Difference Interpolation",
-    content: `
+    "title": "5.4. Worked Example for Backward Difference Interpolation",
+    "content": `
         <h2>Worked Example for Backward Difference Interpolation</h2>
         <p>Let's consider a dataset with equally spaced intervals:</p>
         <table>
@@ -518,8 +511,8 @@ const slides = [
         <table>
             <tr>
                 <th>f(x)</th>
-                <th>Δf(x)</th>
-                <th>Δ²f(x)</th>
+                <th>\(\Delta f(x)\)</th>
+                <th>\(\Delta^2 f(x)\)</th>
             </tr>
             <tr>
                 <td>7</td>
@@ -549,13 +542,12 @@ const slides = [
         <p>Substituting the values:</p>
         <p class="math">P(2.5) = 5 + \frac{-2}{1!} \cdot (-0.5) + \frac{-1}{2!} \cdot (-0.5)(0.5)</p>
         <p>Calculating gives:</p>
-        <p class="math">P(2.5) = 5 + 1 + \frac{-1}{4} = 5 - 0.25 = 4.75</p>
+        <p class="math">P(2.5) = 5 + 1 - \frac{1}{4} = 5 - 0.25 = 4.75</p>
 
         <h3>Conclusion</h3>
         <p>The estimated value of f(2.5) using backward difference interpolation is approximately 4.75.</p>
     `
 },
-
 {
     title: "5.5. Applications and Advantages of Backward Interpolation",
     content: `
