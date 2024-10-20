@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numerical Analysis Presentation</title>
-    <link rel="stylesheet" href="https://samkarya.github.io/Presentation/presentation01.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
     <div id="presentation">
@@ -14,11 +15,13 @@
         <div id="controls">
             <button id="prevSlide">Previous</button>
             <button id="nextSlide">Next</button>
-            <button id="toggleDraw">Toggle Draw</button>
+            <button id="toggleDraw">Enable Draw</button>
             <button id="clearCanvas">Clear Canvas</button>
+            <input type="color" id="colorPicker" value="#000000">
+            <button id="toggleFullscreen">Fullscreen</button>
         </div>
     </div>
     <canvas id="drawCanvas"></canvas>
-    <script src="https://samkarya.github.io/Presentation/presentation01.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
