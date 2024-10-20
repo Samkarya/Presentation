@@ -781,12 +781,17 @@ const slides = [
         <h2>Appendix</h2>
         <h3>A.1. List of Formulas for Finite Differences and Interpolation</h3>
         <ul>
-            <li><strong>Forward Difference:</strong> Δf(x) = f(x + h) - f(x)</li>
-            <li><strong>Backward Difference:</strong> Δf(x) = f(x) - f(x - h)</li>
-            <li><strong>Central Difference:</strong> Δf(x) = f(x + h/2) - f(x - h/2)</li>
-            <li><strong>Newton-Gregory Forward Difference Formula:</strong> P(x) = f(x_0) + \frac{Δf(x_0)}{1!}(x - x_0) + \frac{Δ^2f(x_0)}{2!}(x - x_0)(x - x_1) + ...</li>
-            <li><strong>Newton-Gregory Backward Difference Formula:</strong> P(x) = f(x_n) + \frac{E[f(x_n)]}{1!}(x - x_n) + \frac{E^2[f(x_n)]}{2!}(x - x_n)(x - x_{n-1}) + ...</li>
-        </ul>
+    <li><strong>Forward Difference:</strong> \( \Delta f(x) = f(x + h) - f(x) \)</li>
+    <li><strong>Backward Difference:</strong> \( \Delta f(x) = f(x) - f(x - h) \)</li>
+    <li><strong>Central Difference:</strong> \( \Delta f(x) = f\left(x + \frac{h}{2}\right) - f\left(x - \frac{h}{2}\right) \)</li>
+    <li><strong>Newton-Gregory Forward Difference Formula:</strong> 
+        \( P(x) = f(x_0) + \frac{\Delta f(x_0)}{1!}(x - x_0) + \frac{\Delta^2 f(x_0)}{2!}(x - x_0)(x - x_1) + \ldots \)
+    </li>
+    <li><strong>Newton-Gregory Backward Difference Formula:</strong> 
+        \( P(x) = f(x_n) + \frac{E[f(x_n)]}{1!}(x - x_n) + \frac{E^2[f(x_n)]}{2!}(x - x_n)(x - x_{n-1}) + \ldots \)
+    </li>
+</ul>
+
 
         <h3>A.2. Table of Common Forward and Backward Differences</h3>
         <table>
