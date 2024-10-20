@@ -845,6 +845,7 @@ function createSlides() {
         `;
         slidesContainer.appendChild(slideElement);
     });
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
 
 function updateSlides() {
@@ -852,6 +853,7 @@ function updateSlides() {
     allSlides.forEach((slide, index) => {
         slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`;
     });
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
 
 function nextSlide() {
