@@ -868,6 +868,7 @@ function nextSlide() {
         saveDrawing();
         clearCanvas();
         loadDrawing();
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     }
 }
 
@@ -878,6 +879,7 @@ function prevSlide() {
         saveDrawing();
         clearCanvas();
         loadDrawing();
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     }
 }
 
@@ -888,6 +890,7 @@ function goToSlide(index) {
         saveDrawing();
         clearCanvas();
         loadDrawing();
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     }
 }
 
